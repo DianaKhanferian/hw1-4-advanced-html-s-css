@@ -1,0 +1,249 @@
+.promo
+  display: flex
+  align-items: center
+  background: #f1e4e6
+  padding-left: calc(50% - 800px)
+  padding-right: calc(50% - 800px)
+  &__img
+    max-width: 50%
+
+  &__info
+    padding-left: 16px
+    margin-left: 65px
+    border-left: 12px solid #f16d7f
+
+  &__title
+    color: $colorHeader
+    font-size: 32px
+    font-weight: 700
+    &--main
+      font-size: 48px
+      font-weight: 900
+
+    &--fashion
+      color: #f16d7f
+
+.sale
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 30px
+  padding-top: 64px
+  padding-bottom: 96px
+
+  &__item
+    position: relative
+
+  &__shadow
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    height: 100%
+    opacity: 0.7
+
+  &__item__big
+    position: relative
+    min-height: 180px
+    grid-column: 1 / -1
+    background-image: url(img/sibig.jpg)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+
+  &__content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    @include flex_col_jc-c_ai-c
+
+  &__text
+    text-align: center
+    font-weight: 400
+    font-size: 16px
+    color: #ffffff
+
+  &__heading
+    text-align: center
+    color: $colorSelectSite
+    font-size: 24px
+    font-weight: 700
+
+.featured-items
+  padding-bottom: 48px
+  @include flex_column_center(6px)
+  &__header
+    color: $colorHeader
+    font-size: 30px
+    font-weight: 400
+
+  &__text
+    color: #9f9f9f
+    font-size: 14px
+    font-weight: 400
+
+.catalog
+  &__button-box
+    @include flex_jc-c_ai-c
+
+  &__button
+    @extend .button
+    margin-top: 48px
+    margin-bottom: 95px
+
+.product-box
+  display: grid
+  grid-template-columns: repeat(auto-fit, 360px)
+  justify-content: center
+  gap: 30px
+
+.product
+  position: relative
+  &:hover &__img
+    filter: brightness(0.5)
+
+    &:hover &__add
+      display: flex
+
+  &__img
+    width: 100%
+
+  &__add
+    position: absolute
+    top: 188px
+    left: 111px
+    width: 139px
+    height: 44px
+    display: none
+    align-items: center
+    justify-content: center
+    gap: 11px
+    border: 1px solid #fff
+    font-weight: 400
+    font-size: 14px
+    color: #fff
+    &:hover
+      box-shadow: 0 0 5px #fff
+
+    &:hover svg path
+      fill: $colorSelectSite
+
+  &__content
+    @include flex_col(16px)
+    padding: 24px 16px
+    background: #f8f8f8
+
+  &__heading
+    color: #222
+    font-size: 13px
+    font-weight: 400
+
+  &__text
+    color: #5d5d5d
+    font-size: 14px
+    font-weight: 300
+
+  &__price
+    font-size: 16px
+    font-weight: 400
+    color: $colorSelectSite
+
+.advantages
+  @include flex_w_jc-c_ai-c(30px)
+  padding-top: 104px
+  padding-bottom: 104px
+  background-color: $backBlock
+  &__item
+    @include flex_column_center(24px)
+    width: 360px
+
+  &__heading
+    color: #fbfbfb
+    font-size: 20px
+    font-weight: 400
+
+  &__text
+    text-align: center
+    color: #5d5d5d
+    font-size: 14px
+    font-weight: 300
+
+@media (max-width: 768px)
+  .center
+    padding-left: 16px
+    padding-right: 16px
+
+  .promo
+    &__content
+      padding-left: 42px
+
+    &__info
+      margin-left: 42px
+
+    &__title
+      font-size: 24px
+      &--main
+        font-size: 44px
+
+  .sale
+    padding-top: 20px
+    padding-bottom: 154px
+    gap: 20px
+
+  .featured-items
+    padding-bottom: 72px
+
+  .product-box
+    gap: 16px
+
+  .advantages
+    padding-top: 46px
+    padding-bottom: 64px
+
+  .subscribe
+    justify-content: center
+    gap: 48px
+
+  .footer__top
+    padding-top: 64px
+    padding-bottom: 140px
+    gap: 48px
+
+@media (max-width: 375px)
+  .not-mobile
+    display: none
+
+  .promo
+    min-height: 363px
+    justify-content: center
+    &__img
+      display: none
+
+    &__title
+      font-size: 20px
+      &--main
+        font-size: 38px
+
+  .sale
+    grid-template-columns: repeat(1, 1fr)
+    &__item__big
+      min-height: 111px
+
+    &__text
+      font-size: 16px
+
+    &__heading
+      font-size: 24px
+
+  .advantages
+    padding-bottom: 81px
+
+  .subscribe
+    padding-top: 64px
+    gap: 59px
+
+  .footer
+    flex-direction: column-reverse
+    padding-top: 51px
+    gap: 40px
